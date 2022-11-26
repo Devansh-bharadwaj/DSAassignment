@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Assignment</title>
+  </head>
+  <body>
+    <h1 stackyle="text-align: center">
+      Assignment 1 - Liner Data stackructure
+    </h1>
+
+    <script>
+      // Q1. Write a program to find all pairs of an integer array whose sum is equal to a given number?
+      //   solution:
+      // let num = +prompt("Enter the number");
+      // let arr = [2, 5, 12, 8, 6, 4, 10];
+      // for(var i = 0; i < arr.length; i++){
+      //     for(var j = i + 1; j < arr.length; j++){
+      //         if(num == arr[i] + arr[j]){
+      //             console.log(arr[i], arr[j]);
+      //             break;
+      //         }
+      //     }
+      // }
+
+      // Q2. Write a program to reverse an array in place? In place means you cannot create a new array. You have to update the original array.
+      // function reverseArr(arr) {
+      //     let leftIndex = 0;
+      //     let rightIndex = arr.length - 1;
+
+      //     while(leftIndex < rightIndex){
+      //         let temp = arr[leftIndex];
+      //         arr[leftIndex] = arr[rightIndex];
+      //         arr[rightIndex] = temp;
+
+      //         leftIndex++;
+      //         rightIndex--;
+      //     }
+      // }
+
+      // let myArr = [2, 5, 12, 8, 6, 4, 10];
+      // reverseArr(myArr);
+      // console.log(myArr);
+
+      // Q3. Write a program to check if two strings are a rotation of each other?
+      // function checkStr(str1, str2, indexFound, Size) {
+      //   for (let i = 0; i < Size; i++) {
+      //     if (str1[i] != str2[(indexFound + i) % Size]) return false;
+      //   }
+      //   return true;
+      // }
+      // let str1 = prompt("Enter first string");
+      // let str2 = prompt("Enter second string");
+      // if (str1.length != str2.length) {
+      //   document.write("str2 is not a rotation on str1");
+      // } else {
+      //   let indexes = [];
+      //   let Size = str1.length;
+      //   let firstChar = str1[0];
+      //   for (let i = 0; i < Size; i++) {
+      //     if (str2[i] == firstChar) {
+      //       indexes.push(i);
+      //     }
+      //   }
+      //   let isRotation = false;
+      //   for (let idx of indexes) {
+      //     isRotation = checkStr(str1, str2, idx, Size);
+      //     if (isRotation) break;
+      //   }
+      //   if (isRotation) document.write("str2 is rotation of str1");
+      //   else document.write("str2 is not a rotation of str1");
+      // }
+
+      // Q4. Write a program to print the first non-repeated character from a string?
+      //   function firstNonRepeatedCharacter(string) {
+      //   for (var i = 0; i < string.length; i++) {
+      //     var c = string.charAt(i);
+      //     if (string.indexOf(c) == i && string.indexOf(c, i + 1) == -1) {
+      //       console.log(c);
+      //     }
+      //   }
+      // }
+      // let str1 = prompt("Enter the string");
+      // firstNonRepeatedCharacter(str1);
+
+      // Q5. Read about the Tower of Hanoi algorithm. Write a program to implement it.
+      // function towerHanoi(n, from, to, using){
+      //   if(n == 1) {
+      //     console.log(`Move disk 1 from ${from} to ${to}`)
+      //     return
+      //   }
+      //   towerHanoi(n - 1, from, using, to)
+      //   console.log(`Move disk ${n} from ${from} to ${to}`);
+      //   towerHanoi(n - 1, using, to, from)
+      // }
+
+      // towerHanoi(3, 'A', 'C', 'B');
+
+      // Q6. Read about infix, prefix, and postackfix expessions. Write a program to convert postackfix to prefix expession.
+      // function isOperator(x) {
+      //   switch (x) {
+      //     case "+":
+      //     case "-":
+      //     case "/":
+      //     case "*":
+      //       return true;
+      //   }
+      //   return false;
+      // }
+
+      // function postfixToPrefix(postExp) {
+      //   let s = [];
+      //   let length = postExp.length;
+      //   for (let i = 0; i < length; i++) {
+      //     if (isOperator(postExp[i])) {
+      //       let op1 = s[s.length - 1];
+      //       s.pop();
+      //       let op2 = s[s.length - 1];
+      //       s.pop();
+      //       let temp = postExp[i] + op2 + op1;
+      //       s.push(temp);
+      //     } else {
+      //       s.push(postExp[i] + "");
+      //     }
+      //   }
+
+      //   let ans = "";
+      //   while (s.length > 0) ans += s.pop();
+      //   console.log(ans);
+      // }
+
+      // let postExp = "ABC/-AK/L-*";
+      // document.write("Prefix : " + postfixToPrefix(postExp));
+
+      // Q7. Write a program to convert prefix expession to infix expession.
+      // function isOperator(x) {
+      //   switch (x) {
+      //     case "+":
+      //     case "-":
+      //     case "*":
+      //     case "/":
+      //     case "^":
+      //     case "%":
+      //       return true;
+      //   }
+      //   return false;
+      // }
+      // function convert(stackring) {
+      //   let stack = [];
+      //   let len = stackring.length;
+      //   for (let i = len - 1; i >= 0; i--) {
+      //     let c = stackring[i];
+      //     if (isOperator(c)) {
+      //       let op1 = stack[stack.length - 1];
+      //       stack.pop();
+      //       let op2 = stack[stack.length - 1];
+      //       stack.pop();
+      //       let temp = "(" + op1 + c + op2 + ")";
+      //       stack.push(temp);
+      //     } else {
+      //       stack.push(c + "");
+      //     }
+      //   }
+      //   console.log(stack[stack.length - 1]);
+      // }
+
+      // let exp = "*-A/BC-/AKL";
+      // document.write("Infix : " + convert(exp));
+
+      // Q8. Write a program to check if all the brackets are closed in a given code snippet.
+      // function bracketsBalanced(exp) {
+      //   let stack = [];
+
+      //   for (let i = 0; i <h2 exp.length; i++) {
+      //     let x = exp[i];
+
+      //     if (x == "(" || x == "[" || x == "{") {
+      //       stack.push(x);
+      //       continue;
+      //     }
+      //     if (stack.length == 0) return false;
+
+      //     let check;
+      //     switch (x) {
+      //       case ")":
+      //         check = stack.pop();
+      //         if (check == "{" || check == "[") return false;
+      //         break;
+
+      //       case "}":
+      //         check = stack.pop();
+      //         if (check == "(" || check == "[") return false;
+      //         break;
+
+      //       case "]":
+      //         check = stack.pop();
+      //         if (check == "(" || check == "{") return false;
+      //         break;
+      //     }
+      //   }
+      //   return stack.length == 0;
+      // }
+      // let exp = prompt("Enter expression?");
+      // if (bracketsBalanced(exp)) document.write("Balanced ");
+      // else document.write("Not Balanced ");
+
+      // Q9. Write a program to reverse a stack.
+      // let stack = [];
+      // function insertAtBottom(x) {
+      //   if (stack.length == 0) stack.push(x);
+      //   else {
+      //     let a = stack.pop();
+      //     insertAtBottom(x);
+      //     stack.push(a);
+      //   }
+      // }
+      // function reverse() {
+      //   if (stack.length > 0) {
+      //     let x = stack.pop();
+      //     reverse();
+      //     insertAtBottom(x);
+      //   }
+      // }
+      // stack.push("1");
+      // stack.push("2");
+      // stack.push("3");
+      // stack.push("4");
+
+      // document.write(`<h2>Original stack is</h2>`);
+      // document.write(stack.join(" ") + "<br>");
+      // reverse();
+      // document.write(`<h2>Reversed stack is</h2>`);
+      // document.write(stack.join(" "));
+
+      // Q10. Write a program to find the small stack number using a stack.
+      let arr = [2, 1, 34, 5, 78];
+      let sortArr = arr.sort(function(a, b){return a - b});
+      console.log("Smallest number is: " + sortArr[0])
+	
+</script>
+
+    </script>
+  </body>
+</html>
